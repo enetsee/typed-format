@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "summary": "A typed format printer to safely show your data",
+    "summary": "A type-safe 'sprintf' format printer.",
     "repository": "https://github.com/enetsee/typed-format.git",
     "license": "BSD3",
     "source-directories": [
