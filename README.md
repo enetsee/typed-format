@@ -8,7 +8,31 @@ which is based on the same idea (see references).
 
 ## Examples
 
-See the [examples](https://github.com/enetsee/typed-format/tree/master/examples) for some simple examples.
+Here is a formatter that, when applied with 'sprintf', will accept a string output the string `hello [X]!`
+
+```elm
+hello : Format a (String -> a)
+hello =
+    s "hello " <++> string <++> s "!"
+```
+
+You can combined formatters using `<++>` to get more complex formatters. For example:
+
+```elm
+doubleHello : Format a (String -> String -> a)
+doubleHello =
+    hello <++> hello
+```
+
+and
+
+```
+myMessage : Format a (Char -> Char -> a)
+myMessage =
+    s "Elm gets me from " <++> char <++> s " to " <++> char
+```
+
+See the [examples](https://github.com/enetsee/typed-format/tree/master/examples) for more examples.
 
 ## Installation
 ```
