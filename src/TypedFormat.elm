@@ -196,13 +196,13 @@ currency symbol abbreviateUnits isAccounting sep decimalPoint =
         toCurrencyStr x =
             if abbreviateUnits then
                 let
-                    ( x', b ) =
+                    ( y, b ) =
                         numberWithBase x
 
                     suffix =
                         Dict.get b currencySuffix
                 in
-                    prettyFloatHelper (Just symbol) suffix isAccounting ',' '.' 2 x'
+                    prettyFloatHelper (Just symbol) suffix isAccounting ',' '.' 2 y
             else
                 prettyFloatHelper (Just symbol) Nothing isAccounting ',' '.' 2 x
     in
